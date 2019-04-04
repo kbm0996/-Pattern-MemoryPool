@@ -32,7 +32,7 @@ unsigned int __stdcall WorkerThread(LPVOID pParam);
 
 void main()
 {
-	g_pMemPool = new mylib::CLFMemoryPool_TLS<st_TEST_DATA>(0);
+	g_pMemPool = new mylib::CLFMemoryPool_TLS<st_TEST_DATA>();
 
 	HANDLE hWorkerThread[THREAD_CNT];
 	for (int iCnt = 0; iCnt < THREAD_CNT; ++iCnt)
