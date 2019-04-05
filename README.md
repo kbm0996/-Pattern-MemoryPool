@@ -12,9 +12,9 @@
 ### 💻 CMemoryPool
 일반적인 메모리풀
 ### 💻 CLFMemoryPool
-`쓰레드 안전(Thread- safety)`하게 `락프리(Lock-free)` 알고리즘을 적용시킨 메모리풀
+`쓰레드 안전(Thread- safety)`하게 `interlocked 함수(atomic 연산)`를 기반으로 한 `락프리(Lock-free)` 알고리즘을 적용시킨 메모리풀
 
-* **락프리(Lock-free) 알고리즘** : 삽입, 삭제가 성공적으로 이루어질 때까지 무한 반복하는 것. SRWLock이나 CriticalSection의 옵션 중 하나인 스핀락(Spinlock)과 유사
+* **락프리(Lock-free) 알고리즘** : `CAS(Compare And Swap)`하면서 삽입, 삭제가 성공적으로 이루어질 때까지 무한 반복하는 것. SRWLock이나 CriticalSection의 옵션 중 하나인 스핀락(Spinlock)과 유사
 
 ### 💻 CLFMemoryPool_TLS
 락프리 메모리풀에서 성능을 향상시키기 위해 `TLS(Thread Local Storage)`를 적용시킨 메모리풀
